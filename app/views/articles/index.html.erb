@@ -1,3 +1,9 @@
+<h1>Click below to post a new article</h1>
+<p>
+	<%= link_to 'New article', { controller: "articles", action: "new" } %>	
+</p>
+<br>
+<h1>List of articles</h1>
 
 <% @article.each do |article| %>
 
