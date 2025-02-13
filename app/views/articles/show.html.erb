@@ -3,6 +3,7 @@
 	<%= @article.text %>
 </p>
 
+<h2>Add comment</h2>
 <p>
 	<%= form_for ([@article, @article.comments.build]) do |f| %>
 	<% if @article && @article.errors.any? %>
@@ -30,11 +31,11 @@
 	</p>
 	<% end %>
 </p>
-<br>
+<h2>Comments</h2>
 <p>
 	<% @article.comments.each do |comment| %>
-		<h2><%= comment.author %></h2>
 		<p>
+			<i><%= comment.author %> said:</i><br>
 			<%= comment.body %>
 		</p>
 	<% end %>
