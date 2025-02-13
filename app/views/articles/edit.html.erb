@@ -1,5 +1,6 @@
 <h1>Edit article</h1>
 
+<p>
 <%= form_with model: @article, data: {turbo:false} do |f| %>
 	<% if @article && @article.errors.any? %>
 	<p>
@@ -25,3 +26,4 @@
 		<%= f.submit %>
 	</p>
 <% end %>
+</p>
