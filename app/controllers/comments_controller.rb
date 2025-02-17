@@ -5,7 +5,7 @@ def create
   if @article.comments.create(comment_params)
     redirect_to article_path(@article)
   else
-    render action: "show"
+    render action: 'show'    
   end
 end    
 
