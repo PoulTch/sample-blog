@@ -21,13 +21,13 @@
 <% if user_signed_in? %>
 	<h2>Add comment</h2>
 	<p>
-		<%= form_for([@article, @article.comments.build]) do |f| %>		
+		<%= form_for([@article, @article.comments.build]) do |f| %>
 		<p>
 			<%= f.label current_user.username %><br>						
 		</p>
 
-		<p>
-			<%= f.label :body %><br>
+		<p>			
+			<%= f.label :body %><br>  
 			<%= f.text_area :body %>
 		</p>
 

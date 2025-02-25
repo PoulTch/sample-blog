@@ -20,15 +20,14 @@
   </head>
 
   <body>
-
     <div class="container">  
       <div class="row">
         <div class="col-xs-12">
         <% if user_signed_in? %>
           <span>Здравствуйте, <%= current_user.username %></span>
-          <%= link_to 'Sign Out', destroy_user_session_path, data: { 'turbo-method': :delete } %>
+          <%= link_to 'Sign Out', destroy_user_session_path, data: { 'turbo-method': :delete } %> | <%= link_to 'Show articles', articles_path %> | <%= link_to 'Contacts', contacts_path %> | <%= link_to 'Terms', terms_path %> 
         <% else %>    
-            <%= link_to 'Sign In', new_user_session_path %>
+            <%= link_to 'Sign In', new_user_session_path %> 
         <% end %>
 
         <p class="notice"><%= notice %></p>
