@@ -1,7 +1,3 @@
-<h1>Click below to post a new article</h1>
-<p>
-	<%= link_to 'New article', { controller: "articles", action: "new" } %>	
-</p>
 <h1>List of articles</h1>
 
 <% @article.each do |article| %>
@@ -13,8 +9,8 @@
 </p>
 
 <p>
-	<%= link_to 'Show', article_path(article) %> |
-	<%= link_to 'Edit', edit_article_path(article) %> |
+	<%= link_to 'Show', article_path(article) %>
+	<%= link_to 'Edit', edit_article_path(article) %> 
 	<%= link_to 'Delete', article_path(article), data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } %> 
 </p>
 

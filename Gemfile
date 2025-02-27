@@ -60,3 +60,8 @@ group :test do
 end
 
 gem 'devise'
+
+# Add these gems. Rails is not including jQuery by default.
+# You need to include it to use all bootstrap options.
+gem "bootstrap"
+gem "jquery-rails"
