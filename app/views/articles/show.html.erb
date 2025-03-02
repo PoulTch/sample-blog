@@ -3,19 +3,8 @@
 	<%= @article.text %>
 	<br>
 	<br>
-	<i>Create at <%= @article.created_at %></i>
-</p>
-
-<h2>Comments</h2>
-<p>
-	<% @article.comments.each do |comment| %>
-	<p>
-		<%= comment.body %>
-		<br>
-		<i>Said <%= comment.author %> at <%= comment.created_at %></i>
-		<hr>			
-	</p>
-	<% end %>
+	<i>Create <%= @article.author %> at <%= @article.created_at %></i>
+	<hr>
 </p>
 
 <% if user_signed_in? %>
@@ -26,14 +15,13 @@
 		<%= f.label current_user.username %><br>						
 	</p>
 
-	<p>			
+	<p>	
 		<%= f.label :body %><br>  
-		<%= f.text_area :body %>
-	</p>
-
+		<%= f.text_area :body, class: "form-control", rows: "3" %>		
+	</p>	
 	<p>
-		<%= f.submit %>
-	</p>
+		<%= f.submit class: "btn btn-outline-secondary" %>
+	</p> 
 	<% end %>
 </p>
 <% else %>
@@ -41,3 +29,12 @@
 <% end %>
 <hr/>
 
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+<p>
+	<%= comment.body %>
+	<br>
+	<i>Said <%= comment.author %> at <%= comment.created_at %></i>
+	<hr>			
+</p>
+<% end %>

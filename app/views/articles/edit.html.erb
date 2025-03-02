@@ -1,5 +1,6 @@
 <h1>Edit article</h1>
 
+<% if user_signed_in? %>
 <p>
 <%= form_with model: @article, data: {turbo:false} do |f| %>
 	<% if @article && @article.errors.any? %>
@@ -14,16 +15,19 @@
 	
 	<p>
 		<%= f.label :title %><br>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, class: "form-control" %>
 	</p>
 
 	<p>
 		<%= f.label :text %><br>
-		<%= f.text_area :text %>
+		<%= f.text_area :text, class: "form-control", rows: 12 %>
 	</p>
 
 	<p>
-		<%= f.submit %>
+		<%= f.submit class: "btn btn-outline-secondary" %>
 	</p>
 <% end %>
 </p>
+<% else %>
+<i>Please <%= link_to "sign in", new_user_session_path %> or <%= link_to "register", new_user_registration_path %> to edit article.</i>
+<% end %>
