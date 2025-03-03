@@ -30,11 +30,15 @@
 <hr/>
 
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
+
+<!-- <% @article.comments.each do |comment| %>
 <p>
 	<%= comment.body %>
 	<br>
-	<i>Said <%= comment.author %> at <%= comment.created_at %></i>
+	<i>Said<%= comment.author %>at<%= comment.created_at %></i>
 	<hr>			
-</p>
-<% end %>
+</p> 
+<% end %> -->
+
+<%= render @article.comments %>
+

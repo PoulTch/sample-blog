@@ -1,0 +1,10 @@
+<% unless !comment.persisted? %>
+
+<p>
+	<%= comment.body %>
+	<br>
+	<i>Said <%= comment.author %> at <%= comment.created_at %></i>
+	<hr>			
+</p>
+
+<% end %>
