@@ -9,4 +9,14 @@ describe Article do
   describe "association" do
     it { should have_many(:comments).dependent(:destroy)  }
   end
+
+  describe "#subject" do
+    it "returns the article title" do
+      # создаем объект article хитрым способом
+      article = create(:article, title: 'Lorem Ipsum')
+
+      # assert, проверка
+      expect(article.subject).to eq 'Lorem Ipsum'
+    end
+  end
 end
