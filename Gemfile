@@ -65,4 +65,5 @@ group :test, :development do
   gem "rspec-rails", "~> 7.1.1"
   gem "capybara"
   gem "shoulda-matchers"
+  gem "factory_bot_rails"
 end
