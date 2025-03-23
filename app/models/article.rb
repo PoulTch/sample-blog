@@ -10,4 +10,6 @@ class Article < ApplicationRecord
   def last_comment
     comments.last
   end
+
+  validates_length_of :title, maximum: 140 
 end
