@@ -11,5 +11,7 @@ class Article < ApplicationRecord
     comments.last
   end
 
-  validates_length_of :title, maximum: 140 
+  validates_length_of :title, maximum: 140
+
+  validates_length_of :text, maximum: 4000 
 end
