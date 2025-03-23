@@ -29,4 +29,8 @@ describe Article do
       expect(article.last_comment.body).to eq "comment body 3"
     end
   end
+
+  describe Article, type: :model do
+    it { should validate_length_of(:title).is_at_most(140) }
+  end
 end
