@@ -15,6 +15,6 @@ feature "Contact Creation" do
 
       click_button 'Send message'
       
-      expect(page).to have_content 'Thanks!'
-  end
+      expect(page).to have_content I18n.t('contacts.create_message')
+    end
 end
