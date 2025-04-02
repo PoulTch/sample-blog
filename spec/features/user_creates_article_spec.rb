@@ -19,5 +19,5 @@ feature "Article Creation" do
     click_button 'Save Article'
       
     expect(page).to have_content 'something'
-  end
+  end  
 end
