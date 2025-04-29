@@ -61,6 +61,8 @@ end
 
 gem 'devise'
 
+gem 'cancancan'
+
 group :test, :development do
   gem "rspec-rails", "~> 7.1.1"
   gem "capybara"
