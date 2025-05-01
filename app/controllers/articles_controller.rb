@@ -25,10 +25,12 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    authorize! :edit, @article
   end
 
   def update
     @article = Article.find(params[:id])
+    authorize! :update, @article
     if @article.update(article_params)
       redirect_to articles_path
     else
