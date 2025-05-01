@@ -14,7 +14,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-      @article = Article.new(article_params)
+      @article = current_user.articles.new(article_params)
+      @article.user_id = current_user.id
       @article.author = current_user.username
     if @article.save
       redirect_to @article
@@ -30,7 +31,6 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    authorize! :update, @article
     if @article.update(article_params)
       redirect_to articles_path
     else
