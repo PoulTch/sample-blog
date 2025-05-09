@@ -29,7 +29,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
     
-    can :update, Article, user: user
+    can [:read, :create, :update, :destroy], Article, user: user
 
   end
 end
